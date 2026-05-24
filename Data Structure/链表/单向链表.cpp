@@ -1,20 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define OK 1
+#define ERROR 0
+#define Status int
+
 
 typedef struct LinkList{
     int data;
     ListNode* next;
-}List,*LinkList;
+}ListNode,*LinkList;
 
 //链表初始化
-Status InitList(List &L){
-    L = new List;
+Status InitList(LinkList &L){
+    L = new ListNode;
     L->next = NULL;
     return OK;
 }
 
 //插入元素
-Status InsertList(List &L,int i,int e){
+Status InsertList(LinkList &L,int i,int e){
     ListNode* p = L;
     int j = 0;
     while(p != NULL && j < i-1){
@@ -32,7 +36,7 @@ Status InsertList(List &L,int i,int e){
 }
 
 //删除元素
-Status DeleteList(List &L,int i,int &e){
+Status DeleteList(LinkList &L,int i,int &e){
     ListNode* p = L;
     int j = 0;
     while(p != NULL && j < i-1){
