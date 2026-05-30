@@ -24,13 +24,13 @@ public:
                 pa.push_back(pb);
             }
             pb.pop_back();
-            sum -= root -> val;
+            sum -= root -> val;//回退到父节点，因为在递归调用中，sum已经加上了当前节点的值，所以在回退时需要减去当前节点的值，以恢复到父节点的状态。
             return;
         }
-        getleaves(pa, pb, root -> left, sum, targetSum);
-        getleaves(pa, pb, root -> right, sum, targetSum);
-        pb.pop_back();
-        sum -= root->val;
+        getleaves(pa, pb, root -> left, sum, targetSum);//递归调用左子树
+        getleaves(pa, pb, root -> right, sum, targetSum);//递归调用右子树
+        pb.pop_back();//回退到父节点
+        sum -= root->val;//回退到父节点，因为在递归调用中，sum已经加上了当前节点的值，所以在回退时需要减去当前节点的值，以恢复到父节点的状态。
 
 
     }

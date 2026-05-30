@@ -35,11 +35,11 @@ public:
             {
                 return NULL;
             }
-            fast = fast->next->next;
-            slow = slow->next;
-            if(slow == fast)
+            fast = fast->next->next;//快指针每次移动两步
+            slow = slow->next;//慢指针每次移动一步
+            if(slow == fast)//如果快慢指针相遇，说明存在环
             {
-                while(pa!=slow)
+                while(pa!=slow)//将其中一个指针重新指向链表头部，然后两个指针以相同的速度前进，直到它们再次相遇，相遇的节点就是环的入口节点
                 {
                     pa = pa->next;
                     slow = slow->next;

@@ -23,7 +23,7 @@ int main(){
     for (int i = 2; i <= N; i++) {
         int k, p;
         cin >> k >> p;
-        ListNode *node = new ListNode(i);
+        ListNode *node = new ListNode(i);//构造新节点
         nodes[i] = node;
 
         ListNode *target = nodes[k];

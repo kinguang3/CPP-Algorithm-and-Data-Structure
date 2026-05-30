@@ -25,7 +25,7 @@ public:
                 
             }
             st.pop();
-            switch(st.top())
+            switch(st.top())//根据栈顶的运算符进行计算
             {
                 case '!':
                     st.push((f_n == 1)?'t':'f');

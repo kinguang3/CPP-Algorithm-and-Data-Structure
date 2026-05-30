@@ -23,7 +23,7 @@ public:
                 st.pop();
                 int n = st.top();
                 st.pop();
-                switch(token[0])
+                switch(token[0])//根据运算符进行计算
                 {
                     case '+':st.push(n+m);break;
                     case '-':st.push(n-m);break;

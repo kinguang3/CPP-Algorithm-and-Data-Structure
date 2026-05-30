@@ -36,8 +36,8 @@ public:
             tail = tail->next;
             
         }
-        struct ListNode* newnode = tail -> next;
-        tail->next = nullptr;
+        struct ListNode* newnode = tail -> next;//新的头节点
+        tail->next = nullptr;//断开链表
         return newnode;
     }
 };
