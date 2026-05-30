@@ -10,9 +10,9 @@ public:
         int fast = 1,slow = 1;
         while(fast<nums.size())
         {
-            if(nums[fast] != nums[fast-1])
+            if(nums[fast] != nums[fast-1])//如果当前元素与前一个元素不同，说明是一个新的元素
             {
-                nums[slow] = nums[fast];
+                nums[slow] = nums[fast];//将不重复的元素移动到前面
                 slow++;
             }
             fast++;
