@@ -7,7 +7,7 @@ using namespace std;
 
 typedef struct LinkList{
     int data;
-    ListNode* next;
+    struct LinkList* next;
 }ListNode,*LinkList;
 
 //链表初始化
