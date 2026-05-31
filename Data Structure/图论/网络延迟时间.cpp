@@ -8,11 +8,11 @@ public:
         vector<vector<int>> g(n,vector<int> (n, MAX));
         for(auto i = 0; i < times.size(); ++i)
         {
-            int v1 = times[i][0],v2 = times[i][1];
+            int v1 = times[i][0],v2 = times[i][1];//构造邻接矩阵
             g[v1-1][v2-1] = times[i][2];
         }
         vector<int> dist(n, MAX);
-        dist[k-1] = 0;
+        dist[k-1] = 0;//初始化源节点的距离
         vector<int> used(n, 0);
         int ans = 0;
         for(auto i = 0; i < n; ++i)
@@ -22,7 +22,7 @@ public:
             {
                 if(!used[j] && (x == -1||dist[j] < dist[x]))
                 {
-                    x = j;
+                    x = j;//找到未访问的点中距离最小的点
                     
                 }
             }
