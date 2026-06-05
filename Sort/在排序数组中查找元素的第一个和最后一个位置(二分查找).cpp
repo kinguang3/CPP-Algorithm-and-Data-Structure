@@ -13,8 +13,8 @@ public:
             res[1] = -1;
             return res;
         }
-        int first = lower_bound(nums.begin(), nums.end(),target) - nums.begin();
-        int second = upper_bound(nums.begin(), nums.end(),target) - nums.begin() - 1;
+        int first = lower_bound(nums.begin(), nums.end(),target) - nums.begin();//找到第一个大于等于target的元素位置
+        int second = upper_bound(nums.begin(), nums.end(),target) - nums.begin() - 1;//找到第一个大于target的元素位置，减1即为最后一个等于target的元素位置
         if(first >= nums.size() || nums[first] != target)
         {
             res[0] = -1;
