@@ -45,3 +45,44 @@ void Change_Leaves(BiTree &T) {
 }
 
 
+void Double_Search_Tree(BiTree &T) {
+    if (T == NULL) {
+        return; // 空树不需要处理
+    }
+    cout << T->data << " "; // 输出当前节点的值
+    Double_Search_Tree(T->lchild); // 递归处理左子树
+    cout << T->data << " "; // 输出当前节点的值
+    Double_Search_Tree(T->rchild); // 递归处理右子树
+}
+
+
+// 计算二叉树的宽度
+int Tree_Width(BiTree T) {
+    if (T == NULL) {
+        return 0; // 空树宽度为0
+    }
+    queue<BiTree> q; // 使用队列进行层次遍历
+    q.push(T); // 将根节点入队
+    int maxWidth = 0; // 初始化最大宽度为0
+
+    while (!q.empty()) {
+        int levelSize = q.size(); // 当前层的节点数
+        maxWidth = max(maxWidth, levelSize); // 更新最大宽度
+
+        for (int i = 0; i < levelSize; ++i) {
+            BiTree node = q.front(); // 获取队首节点
+            q.pop(); // 出队
+
+            if (node->lchild != NULL) {
+                q.push(node->lchild); // 左子节点入队
+            }
+            if (node->rchild != NULL) {
+                q.push(node->rchild); // 右子节点入队
+            }
+        }
+    }
+
+    return maxWidth; // 返回最大宽度
+}
+
+
